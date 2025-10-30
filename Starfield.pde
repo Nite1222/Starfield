@@ -3,7 +3,7 @@ int asteroidX=400;
 int asteroidY=400;
 int starX=0;
 int starY=0;
-int timer=1000000000;
+
 void setup(){
   size(800,800);
   particle= new Particle[100];
@@ -56,9 +56,6 @@ void mousePressed(){
   
   if(mouseX<asteroidX+60 && mouseX>asteroidX-60){
     if(mouseY<asteroidY+60 && mouseY>asteroidY-60){
-      while(timer>=0){
-        timer--;
-      }
       for(int i=0;i< particle.length;i++){
         particle[i].myX=mouseX;
         particle[i].myY=mouseY;
@@ -66,7 +63,7 @@ void mousePressed(){
       asteroidX=(int)(Math.random()*800);
       asteroidY= (int)(Math.random()*800);
       for(int i=0;i<timer;i--){
-      timer=1000;
+ 
       }
     }
   }
